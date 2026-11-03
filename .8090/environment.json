@@ -1,10 +1,10 @@
 {
   "name": "Petclinic War Room",
-  "install": "apt-get update && apt-get install -y --no-install-recommends openjdk-17-jdk-headless && ./mvnw -B -DskipTests package",
+  "install": "apt-get update && apt-get install -y --no-install-recommends openjdk-17-jdk-headless && MAVEN_OPTS='-Djava.net.preferIPv6Addresses=true' ./mvnw -B -DskipTests package",
   "terminals": [
     {
       "name": "petclinic",
-      "command": "./mvnw -B spring-boot:run"
+      "command": "MAVEN_OPTS='-Djava.net.preferIPv6Addresses=true' ./mvnw -B spring-boot:run -Dspring-boot.run.arguments=--server.port=8081"
     }
   ]
 }
