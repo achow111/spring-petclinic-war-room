@@ -1,0 +1,10 @@
+{
+  "name": "Petclinic War Room",
+  "install": "apt-get update && apt-get install -y --no-install-recommends openjdk-17-jdk-headless && ./mvnw -B -DskipTests package",
+  "terminals": [
+    {
+      "name": "petclinic",
+      "command": "./mvnw -B spring-boot:run"
+    }
+  ]
+}
